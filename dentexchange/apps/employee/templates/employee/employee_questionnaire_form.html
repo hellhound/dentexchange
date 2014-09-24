@@ -1,0 +1,149 @@
+{% load bootstrap3 %}
+{% load i18n %}
+{% if form.non_field_errors %}
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        <div class="alert alert-error bg-danger">
+            <button type="button" class="btn btn-danger close" data-dismiss="alert" aria-hidden="true">×</button>
+            <ul>
+                {% for error in form.non_field_errors %} 
+                <li>{{ error|striptags }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% if form.resume_form.cv_file.errors %}
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        <div class="alert alert-error bg-danger">
+            <button type="button" class="btn btn-danger close" data-dismiss="alert" aria-hidden="true">×</button>
+            <ul>
+                {% for error in form.resume_form.cv_file.errors %} 
+                <li>{{ error|striptags }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endif %}
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans 'Personal Info' %}</div>
+            <div class="panel-body">
+                {% bootstrap_field form.first_name layout='inline' %}
+                {% bootstrap_field form.last_name layout='inline' %}
+                {% bootstrap_field form.personal_address layout='inline' %}
+                {% bootstrap_field form.personal_zip_code layout='inline' %}
+                {% bootstrap_field form.personal_city layout='inline' %}
+                {% bootstrap_field form.personal_state layout='inline' %}
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans "Job Position you're looking for" %}</div>
+            <div class="panel-body">
+                {% bootstrap_field form.job_position layout='inline' %}
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans 'Type of Practice' %}</div>
+            <div class="panel-body">
+                {% bootstrap_field form.solo_practitioner layout='inline' %}
+                {% bootstrap_field form.multi_practitioner layout='inline' %}
+                {% bootstrap_field form.corporate layout='inline' %}
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans "Patients' Method of Payment" %}</div>
+            <div class="panel-body">
+                {% bootstrap_field form.fee_for_service layout='inline' %}
+                {% bootstrap_field form.insurance layout='inline' %}
+                {% bootstrap_field form.capitation_medicaid layout='inline' %}
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans 'Location' %}</div>
+            <div class="panel-body">
+                {% bootstrap_field form.zip_code layout='inline' %}
+                {% bootstrap_field form.city layout='inline' %}
+                {% bootstrap_field form.state layout='inline' %}
+                {% bootstrap_field form.distance layout='inline' %}
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans 'Type of schedule required' %}</div>
+            <div class="panel-body">
+                {% bootstrap_field form.schedule_type layout='inline' %}
+                <div id="id_schedule_days_control_group">
+                {% bootstrap_field form.monday_daytime layout='inline' %}
+                {% bootstrap_field form.monday_evening layout='inline' %}
+                {% bootstrap_field form.tuesday_daytime layout='inline' %}
+                {% bootstrap_field form.tuesday_evening layout='inline' %}
+                {% bootstrap_field form.wednesday_daytime layout='inline' %}
+                {% bootstrap_field form.wednesday_evening layout='inline' %}
+                {% bootstrap_field form.thursday_daytime layout='inline' %}
+                {% bootstrap_field form.thursday_evening layout='inline' %}
+                {% bootstrap_field form.friday_daytime layout='inline' %}
+                {% bootstrap_field form.friday_evening layout='inline' %}
+                {% bootstrap_field form.saturday_daytime layout='inline' %}
+                {% bootstrap_field form.saturday_evening layout='inline' %}
+                {% bootstrap_field form.sunday_daytime layout='inline' %}
+                {% bootstrap_field form.sunday_evening layout='inline' %}
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans 'Compensation' %}</div>
+            <div class="panel-body">
+                {% bootstrap_field form.compensation_type layout='inline' %}
+                <div id="id_hourly_wage_control_group">
+                {% bootstrap_field form.hourly_wage layout='inline' %}
+                </div>
+                <div id="id_annualy_wage_control_group">
+                {% bootstrap_field form.annualy_wage layout='inline' %}
+                </div>
+                {% bootstrap_field form.production layout='inline' %}
+                {% bootstrap_field form.collection layout='inline' %}
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans 'Experience' %}</div>
+            <div class="panel-body">
+                {% bootstrap_field form.experience_years layout='inline' %}
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans 'Education' %}</div>
+            <div class="panel-body">
+                {% bootstrap_field form.dental_school layout='inline' %}
+                {% bootstrap_field form.graduation_year layout='inline' %}
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans 'Visa' %}</div>
+            <div class="panel-body">
+                {% bootstrap_field form.visa layout='inline' %}
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans 'Specific Strengths' %}</div>
+            <div class="panel-body">
+                {% bootstrap_field form.specific_strengths layout='inline' %}
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans 'Visibility' %}</div>
+            <div class="panel-body">
+                {% bootstrap_field form.is_private layout='inline' %}
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans 'Résumé Upload' %}</div>
+            <div class="panel-body">
+                {% bootstrap_field form.resume_form.cv_file layout='inline' %}
+            </div>
+        </div>
+    </div>
+</div>

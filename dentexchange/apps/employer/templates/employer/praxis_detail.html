@@ -1,0 +1,168 @@
+{% extends 'employer/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block profile_scripts %}
+<script type="text/javascript" src="{% static 'employer/js/praxis_detail.js' %}"></script>
+{% endblock %}
+{% block profile_breadcrumbs %}
+<ol class="breadcrumb">
+    <li><a href="{% url 'employer:job_posting_list' object.pk %}">&lt; Back to job posting list</a></li>
+</ol>
+{% endblock %}
+{% block profile_content %}
+<div class="row">
+    <div class="col-sm-12">
+        <h1 class="title">{% trans 'Pactice Profile / Practice Detail' %}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <h4><p>{{ object.company_name }}</p></h4>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans 'Business' %}</div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Number of Offices' %}</dt>
+                            <dd>{{ object.business.get_number_offices_display }}</dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Is a MSO (Dental Franchise)?' %}</dt>
+                            <dd>{{ object.business.get_is_mso_display }}</dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Number of Employees' %}</dt>
+                            <dd>{{ object.business.get_number_employees_display }}</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans 'Contact Info' %}</div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Company Name' %}</dt>
+                            <dd>{{ object.company_name }}</dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Contact Name' %}</dt>
+                            <dd>{{ object.contact_first_name }} {{ object.contact_last_name }}</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans 'Practice Location' %}</div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Address' %}</dt>
+                            <dd>{{ object.address }}</dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Zip Code' %}</dt>
+                            <dd>{{ object.zip_code }}</dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'City' %}</dt>
+                            <dd>{{ object.city }}</dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'State' %}</dt>
+                            <dd>{{ object.get_state_display }}</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans 'Type of Practice' %}</div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Solo Practitioner' %}</dt>
+                            <dd><span class="glyphicon glyphicon-{% if object.solo_practitioner %}ok{% else %}minus{% endif %}-sign"></span></dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Multi-Practitioner' %}</dt>
+                            <dd><span class="glyphicon glyphicon-{% if object.multi_practitioner %}ok{% else %}minus{% endif %}-sign"></span></dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Corporate' %}</dt>
+                            <dd><span class="glyphicon glyphicon-{% if object.corporate %}ok{% else %}minus{% endif %}-sign"></span></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans "Patients' Method of Payment" %}</div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Fee for Service' %}</dt>
+                            <dd><span class="glyphicon glyphicon-{% if object.fee_for_service %}ok{% else %}minus{% endif %}-sign"></span></dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Insurance' %}</dt>
+                            <dd><span class="glyphicon glyphicon-{% if object.insurance %}ok{% else %}minus{% endif %}-sign"></span></dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Capitation/Medicaid' %}</dt>
+                            <dd><span class="glyphicon glyphicon-{% if object.capitation_medicaid %}ok{% else %}minus{% endif %}-sign"></span></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

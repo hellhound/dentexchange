@@ -1,0 +1,210 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load url from future %}
+{% load bootstrap3 %}
+{% load i18n %}
+{% block extrahead %}
+<link href="{% static 'membership/css/membership.css' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript">
+    Stripe.setPublishableKey("{{ STRIPE_PUBLISHABLE_KEY }}");
+</script>
+<script type="text/javascript" src="{% static 'base/js/ajax.js' %}"></script>
+<script type="text/javascript" src="{% static 'membership/js/membership.js' %}"></script>
+<script type="text/javascript">
+    coupon_validation_url = "{% url 'membership:coupon_validation' %}";
+</script>
+{% endblock %}
+{% block content %}
+<form method="post" action="{% url 'membership:home' %}" id="id_main_form" role="form">
+    {% csrf_token %}
+    {{ form.stripe_token }}
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <h4>{% trans 'Select your Dentexchange Membership' %}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    {% if form.non_field_errors %}
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div class="alert alert-error bg-danger">
+                <button type="button" class="btn btn-danger close" data-dismiss="alert" aria-hidden="true">×</button>
+                <ul>
+                    {% for error in form.non_field_errors %} 
+                    <li>{{ error|striptags }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% for plan in plans %}
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 vcenter">
+            <div class="panel panel-default">
+                <div class="panel-body plan-type">
+                    <table class="table table-striped table-hover table-responsive">
+                        <tbody>
+                        <tr>
+                            <td class="plan-type-name valign"><h3>{{ plan.title }}</h3></td>
+                            <td class="plan-type-description">
+                                {{ plan.content_description|safe }}
+                            </td>
+                            <td>
+                            <ul class="price-list">
+                            {% for price in plan.planprice_set.all %}
+                            <li><input type="radio" class="price_radio" name="{{ form.plan_type.html_name }}" value="{{ price.pk }}" amount="{{ price.price }}" title="{{ price.title }}"{% if price.pk|stringformat:"d" == form.plan_type.value %} checked="checked"{% endif %} />&nbsp;{{ price.title }}{% if price.price %}&nbsp;<span class="price">${{ price.price }}</span>{% endif %}{% if price.tag %}&nbsp;<small>{{ price.tag }}</small>{% endif %}</li>
+                            {% endfor %}
+                            </ul>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    {% endfor %}
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-2">
+            <div class="row" id="id_purchase_info">
+                <div class="col-sm-12">
+                    <div id="id_coupon_code_form_group" class="form-group">
+                        <label for="id_coupon_code">{% trans 'Purchase Information' %}</label>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div id="id_coupon_code_control">
+                                    {% bootstrap_field form.coupon_code layout='inline' %}
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div id="id_coupon_code_button">
+                                    <button type="button" id="id_coupon_code_button" class="btn btn-success">Apply coupon</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <br />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="id_first_name">{% trans 'Contact Info' %}</label>
+                        {% bootstrap_field form.first_name layout='inline' %}
+                        {% bootstrap_field form.last_name layout='inline' %}
+                        {% bootstrap_field form.email layout='inline' %}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <br />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="id_first_name">{% trans 'Billing Address' %}</label>
+                        {% bootstrap_field form.address layout='inline' %}
+                        {% bootstrap_field form.zip_code layout='inline' %}
+                        {% bootstrap_field form.city layout='inline' %}
+                        {% bootstrap_field form.state layout='inline' %}
+                        {% bootstrap_field form.country layout='inline' %}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <br />
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div id="id_summary" style="display: none;">
+                <h4>{% trans 'Order Summary' %}</h4>
+                <hr />
+                <table class="table-responsive order-summary">
+                    <tbody>
+                        <tr>
+                            <td><span id="id_price_title"></span></td>
+                            <td class="text-right total">$<span id="id_price_tag"></span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><br /><br /></td>
+                        </tr>
+                        <tr class="discount" style="display: none;">
+                            <td></td>
+                            <td><hr /><hr /></td>
+                        </tr>
+                        <tr class="discount" style="display: none;">
+                            <td>Discount</td>
+                            <td class="text-right total">-$<span id="id_coupon_discount"></span></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><hr /><hr /></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">Total</td>
+                            <td class="text-right total">$<span id="id_price_total"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br />
+                <p>{% trans 'Subscriptions automatically renew until cancelled by changing your account settings. By submitting this order, you agree you will be charged according to your subscription selection.' %}</p>
+            </div>
+        </div>
+    </div>
+</form>
+<div class="row" id="id_stripe_error" style="display: none;">
+    <div class="col-sm-4 col-sm-offset-2">
+        <div class="alert alert-error bg-danger">
+            <button type="button" class="btn btn-danger close" data-dismiss="alert" aria-hidden="true">×</button>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<form action="" method="POST" id="id_stripe_form" role="form">
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-2">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="id_first_name">{% trans 'Billing Info' %}</label>
+                        {% bootstrap_field billing_info_form.credit_card layout='inline' %}
+                        {% bootstrap_field billing_info_form.cvv layout='inline' %}
+                        {% bootstrap_field billing_info_form.expiry_month layout='inline' %}
+                        {% bootstrap_field billing_info_form.expiry_year layout='inline' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-6">
+            {% buttons %}
+            <button type="submit" id="id_submit" class="btn btn-primary pull-right">SUBSCRIBE</button>
+            {% endbuttons %}
+        </div>
+    </div>
+</div>
+{% endblock %}

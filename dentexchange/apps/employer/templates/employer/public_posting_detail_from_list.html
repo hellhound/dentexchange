@@ -1,0 +1,228 @@
+{% extends 'employee/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load contact %}
+{% block profile_scripts %}
+<script type="text/javascript" src="{% static 'matches/js/employee_saved_matches.js' %}"></script>
+{% endblock %}
+{% block profile_breadcrumbs %}
+<ol class="breadcrumb">
+    <li><a href="{% url 'matches:job_posting_saved_matches' %}">&lt; Back to saved matches</a></li>
+</ol>
+{% endblock %}
+{% block profile_content %}
+{% if not user.userregistration.is_employer %}
+<div class="row">
+    <div class="col-sm-12 pull-right">
+        <div class="pull-right">
+            {% contact_button user object %}
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <br />
+    </div>
+</div>
+{% endif %}
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans 'General Info' %}</div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Position Name' %}</dt>
+                            <dd>{{ object.position_name }}</dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Posting Title' %}</dt>
+                            <dd>{{ object.posting_title }}</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans 'Job posting being offered' %}</div>
+            <div class="panel-body">{{ object.get_job_position_display }}</div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans 'Type of schedule required' %} ({{ object.get_schedule_type_display }})</div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    {% if not object.schedule_type %}
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Monday Daytime' %}</dt>
+                            <dd><span class="glyphicon glyphicon-{% if object.monday_daytime %}ok{% else %}minus{% endif %}-sign"></span></dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Monday Evening' %}</dt>
+                            <dd><span class="glyphicon glyphicon-{% if object.monday_evening %}ok{% else %}minus{% endif %}-sign"></span></dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Tuesday Daytime' %}</dt>
+                            <dd><span class="glyphicon glyphicon-{% if object.tuesday_daytime %}ok{% else %}minus{% endif %}-sign"></span></dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Tuesday Evening' %}</dt>
+                            <dd><span class="glyphicon glyphicon-{% if object.tuesday_evening %}ok{% else %}minus{% endif %}-sign"></span></dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Wednesday Daytime' %}</dt>
+                            <dd><span class="glyphicon glyphicon-{% if object.wednesday_daytime %}ok{% else %}minus{% endif %}-sign"></span></dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Wednesday Evening' %}</dt>
+                            <dd><span class="glyphicon glyphicon-{% if object.wednesday_evening %}ok{% else %}minus{% endif %}-sign"></span></dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Thursday Daytime' %}</dt>
+                            <dd><span class="glyphicon glyphicon-{% if object.thursday_daytime %}ok{% else %}minus{% endif %}-sign"></span></dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Thursday Evening' %}</dt>
+                            <dd><span class="glyphicon glyphicon-{% if object.thursday_evening %}ok{% else %}minus{% endif %}-sign"></span></dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Friday Daytime' %}</dt>
+                            <dd><span class="glyphicon glyphicon-{% if object.friday_daytime %}ok{% else %}minus{% endif %}-sign"></span></dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Friday Evening ' %}</dt>
+                            <dd><span class="glyphicon glyphicon-{% if object.friday_evening %}ok{% else %}minus{% endif %}-sign"></span></dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Saturday Daytime' %}</dt>
+                            <dd><span class="glyphicon glyphicon-{% if object.saturday_daytime %}ok{% else %}minus{% endif %}-sign"></span></dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Saturday Evening' %}</dt>
+                            <dd><span class="glyphicon glyphicon-{% if object.saturday_evening %}ok{% else %}minus{% endif %}-sign"></span></dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Sunday Daytime' %}</dt>
+                            <dd><span class="glyphicon glyphicon-{% if object.sunday_daytime %}ok{% else %}minus{% endif %}-sign"></span></dd>
+                        </dl>
+                    </li>
+                    <li class="list-group-item">
+                        <dl class="dl-horizontal">
+                            <dt>{% trans 'Sunday Evening' %}</dt>
+                            <dd><span class="glyphicon glyphicon-{% if object.sunday_evening %}ok{% else %}minus{% endif %}-sign"></span></dd>
+                        </dl>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans 'Compensation' %} ({{ object.get_compensation_type_display }})</div>
+            <div class="panel-body">
+                {% if object.compensation_type %}
+                <dl class="dl-horizontal">
+                    <dt>{% trans 'Annualy Wage' %}</dt>
+                    <dd>{{ object.get_annualy_wage_display }}</dd>
+                </dl>
+                {% else %}
+                <dl class="dl-horizontal">
+                    <dt>{% trans 'Hourly Wage' %}</dt>
+                    <dd>{{ object.get_hourly_wage_display }}</dd>
+                </dl>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans 'Experience required' %}</div>
+            <div class="panel-body">{{ object.get_experience_years_display }}</div>
+        </div>
+    </div>
+</div>
+{% if object.benefit_1 or object.benefit_2 or object.benefit_3 or object.benefit_4 or object.benefit_5 or object.benefit_6 %}
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans 'Benefits beign offered' %}</div>
+            <div class="panel-body">
+                <ul>
+                    {% if object.benefit_1 %}
+                    <li>{% trans 'Health Insurance' %}</li>
+                    {% endif %}
+                    {% if object.benefit_2 %}
+                    <li>{% trans 'Dental Insurance' %}</li>
+                    {% endif %}
+                    {% if object.benefit_3 %}
+                    <li>{% trans '401K/Retirement Planning' %}</li>
+                    {% endif %}
+                    {% if object.benefit_4 %}
+                    <li>{% trans 'Malpractice Insurance' %}</li>
+                    {% endif %}
+                    {% if object.benefit_5 %}
+                    <li>{% trans 'Disability Insurance' %}</li>
+                    {% endif %}
+                    {% if object.benefit_6 %}
+                    <li>{% trans 'Registration Fee for Continuing Education Courses' %}</li>
+                    {% endif %}
+                    {% if object.benefit_other %}
+                    <li>{{ object.benefit_other_text }}</li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% if object.additional_comments %}
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">{% trans 'Additional Comments' %}</div>
+            <div class="panel-body">{{ object.additional_comments }}</div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

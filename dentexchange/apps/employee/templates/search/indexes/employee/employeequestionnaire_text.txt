@@ -1,0 +1,36 @@
+{% load i18n %}
+{{ object.get_job_position_display }}
+{% if object.solo_practitioner %}{% trans 'Solo Practitioner' %}{% endif %}
+{% if object.multi_practitioner %}{% trans 'Multi Practitioner' %}{% endif %}
+{% if object.corporate %}{% trans 'Corporate' %}{% endif %}
+{% if object.fee_for_service %}{% trans 'Fee for Service' %}{% endif %}
+{% if object.insurance %}{% trans 'Insurance' %}{% endif %}
+{% if object.capitation_medicaid %}{% trans 'Capitation/Medicaid' %}{% endif %}
+{{ object.zip_code }}
+{{ object.city }}
+{{ object.get_state_display }}
+{{ object.get_distance_display }}
+{{ object.get_schedule_type_display }}
+{% if object.monday_daytime %}{% trans 'Monday Daytime' %}{% endif %}
+{% if object.monday_evening %}{% trans 'Monday Evening' %}{% endif %}
+{% if object.tuesday_daytime %}{% trans 'Tuesday Daytime' %}{% endif %}
+{% if object.tuesday_evening %}{% trans 'Tuesday Evening' %}{% endif %}
+{% if object.wednesday_daytime %}{% trans 'Wednesday Daytime' %}{% endif %}
+{% if object.wednesday_evening %}{% trans 'Wednesday Evening' %}{% endif %}
+{% if object.thurday_daytime %}{% trans 'Thursday Daytime' %}{% endif %}
+{% if object.thurday_evening %}{% trans 'Thursday Evening' %}{% endif %}
+{% if object.friday_daytime %}{% trans 'Friday Daytime' %}{% endif %}
+{% if object.friday_evening %}{% trans 'Friday Evening' %}{% endif %}
+{% if object.saturday_daytime %}{% trans 'Saturday Daytime' %}{% endif %}
+{% if object.saturday_evening %}{% trans 'Saturday Evening' %}{% endif %}
+{% if object.sunday_daytime %}{% trans 'Sunday Daytime' %}{% endif %}
+{% if object.sunday_evening %}{% trans 'Sunday Evening' %}{% endif %}
+{{ object.get_compensation_type_display }}
+{% if object.compensation_type %}{{ object.get_annualy_wage_display }}{% else %}{{ object.get_hourly_wage_display }}{% endif %}
+{% if object.production %}{% trans 'Production method of compensation' %}{%endif %}
+{% if object.collection %}{% trans 'Collection method of compensation' %}{%endif %}
+{{ object.get_experience_years_display }}
+{{ object.dental_school }}
+{{ object.get_graduation_year_display }}
+{{ object.get_visa_display }}
+{{ object.specific_strengths }}

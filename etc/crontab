@@ -1,0 +1,2 @@
+0       1       *       *       *       $HOME/.virtualenvs/dentexchange/bin/python $HOME/projects/dentexchange/dentexchange/project/manage.py runjob automatch
+0       7       *       *       *       $HOME/.virtualenvs/dentexchange/bin/python $HOME/projects/dentexchange/dentexchange/project/manage.py runjob periodic_automatches_email

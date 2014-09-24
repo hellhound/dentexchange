@@ -1,0 +1,20 @@
+{% extends 'search/search_view.html' %}
+{% load i18n %}
+{% block search_scripts %}
+<script type="text/javascript">
+    var save_match_url = "{% url 'matches:add_questionnaire_match' %}";
+    var view_details_url = "{% url 'employee:view_public_questionnaire_from_list' %}";
+    var delete_url = "{% url 'matches:delete_questionnaire_match' %}";
+</script>
+{% endblock %}
+{% block search_template %}
+{% verbatim %}
+<td>{{:schedule_type}}&nbsp;{{:wage}}</td>
+<td>
+    <p>{{:city}}, {{:state}}&nbsp;({{:distance}})</p>
+    <p>{{:job_position}}</p>
+</td>
+{% endverbatim %}
+{% endblock %}
+{% block search_title %}{% trans 'SEARCH FOR JOB EMPLOYEES' %}{% endblock %}
+{% block search_form_action %}{% url 'search:employer_results' %}{% endblock %}

@@ -1,0 +1,10 @@
+{% load i18n %}
+{% trans 'Hi' %}{% if token.user.userregistration %} {{ token.user.userregistration.first_name }}{% else %} {% trans 'User' %}{% endif %},
+
+{% trans 'Changing your password is simple. Please use the link below withing 24 hours.' %}</p>
+
+http://{{ http_host }}{% url 'authentication:password_reset_edit' %}?token={{ token }}
+
+{% trans 'Thank you,' %}
+
+{% trans 'The Dentexchange Team' %}

@@ -1,0 +1,20 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% trans 'Password Reset'  %}</title>
+</head>
+<body>
+    <h1>Dentexchange</h1>
+    <p>{% trans 'Hi' %}{% if token.user.userregistration %} {{ token.user.userregistration.first_name }}{% else %} {% trans 'User' %}{% endif %},</p>
+    <br />
+    <p>{% trans 'Changing your password is simple. Please use the link below withing 24 hours.' %}</p>
+    <br />
+    <p><a href="http://{{ http_host }}{% url 'authentication:password_reset_edit' %}?token={{ token }}">http://{{ http_host }}{% url 'authentication:password_reset_edit' %}?token={{ token }}</a>
+    <br />
+    <p>{% trans 'Thank you,' %}</p>
+    <br />
+    <p>{% trans 'The Dentexchange Team' %}</p>
+</body>
+</html>

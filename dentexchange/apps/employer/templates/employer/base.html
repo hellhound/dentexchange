@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+{% load i18n %}
+{% block extrahead %}
+<link href="{% static 'employer/css/base.css' %}" rel="stylesheet" type="text/css" />
+{% block profile_extrahead %}{% endblock %}
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript" src="{% static 'base/js/profile_menu.js' %}"></script>
+{% block profile_scripts %}{% endblock %}
+{% endblock %}
+{% block dashboard_menu %}
+<li id="id_employer_profile_dashboard_menu"><a href="{% url 'employer:dashboard' %}">{% trans 'Dashboard' %}</a></li>
+<li id="id_employer_profile_saved_matches_menu"><a href="{% url 'matches:questionnaire_saved_matches' %}">{% trans 'Saved Matches' %}</a></li>
+<li id="id_employer_profile_automatches_menu"><a href="{% url 'matches:questionnaire_automatches' %}">{% trans 'Automatches' %}</a></li>
+<li id="id_employer_profile_praxis_profile_menu"><a href="{% url 'employer:praxis_profile' %}">{% trans 'Practice Profile' %}</a></li>
+{% endblock %}
+{% block user_profile_menu %}
+<li id="id_employer_profile_account_menu"><a href="{% url 'membership:employer_current_plan' %}">{% trans 'Account' %}</a></li>
+{% endblock %}
+{% block content %}
+{% block profile_breadcrumbs %}{% endblock %}
+{% include 'base/pagination.html' %}
+{% block profile_content %}{% endblock %}
+{% include 'base/pagination.html' %}
+{% endblock %}

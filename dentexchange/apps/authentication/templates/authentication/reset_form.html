@@ -1,0 +1,41 @@
+{% extends 'base/base.html' %}
+{% load bootstrap3 %}
+{% load i18n %}
+{% block login_menu %}
+<li><a href="{% url 'registration:home' %}">{% trans 'Sign up' %}</a></li>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-sm-3 col-sm-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    {% if form.non_field_errors %}
+                    <div class="alert alert-error bg-danger">
+                        <button type="button" class="btn btn-danger close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <ul>
+                            {% for error in form.non_field_errors %} 
+                            <li>{{ error|striptags }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                    <form method="post" action="{% url 'authentication:password_reset' %}" role="form">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-sm-12">
+                                    {% bootstrap_field form.email %}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="pull-right">
+                                    <button type="submit" class="btn btn-primary">{% trans 'Reset my password' %}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

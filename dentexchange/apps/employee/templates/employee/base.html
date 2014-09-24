@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+{% load i18n %}
+{% block extrahead %}
+<link href="{% static 'employee/css/base.css' %}" rel="stylesheet" type="text/css" />
+{% block profile_extrahead %}{% endblock %}
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript" src="{% static 'base/js/profile_menu.js' %}"></script>
+{% block profile_scripts %}{% endblock %}
+{% endblock %}
+{% block dashboard_menu %}
+<li id="id_employee_profile_dashboard_menu"><a href="{% url 'employee:dashboard' %}">{% trans 'Dashboard' %}</a></li>
+<li id="id_employee_profile_saved_matches_menu"><a href="{% url 'matches:job_posting_saved_matches' %}">{% trans 'Saved Matches' %}</a></li>
+<li id="id_employee_profile_automatches_menu"><a href="{% url 'matches:job_posting_automatches' %}">{% trans 'Automatches' %}</a></li>
+<li id="id_employee_profile_profile_menu"><a href="{% if user.employeequestionnaire %}{% url 'employee:questionnaire_edit' user.employeequestionnaire.pk %}{% else %}{% url 'employee:questionnaire_add' %}{% endif %}">{% trans 'Profile' %}</a></li>
+{% endblock %}
+{% block user_profile_menu %}
+<li id="id_employee_profile_account_menu"><a href="{% url 'membership:employee_current_plan' %}">{% trans 'Account' %}</a></li>
+{% endblock %}
+{% block content %}
+{% block profile_breadcrumbs %}{% endblock %}
+{% include 'base/pagination.html' %}
+{% block profile_content %}{% endblock %}
+{% include 'base/pagination.html' %}
+{% endblock %}

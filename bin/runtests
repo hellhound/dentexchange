@@ -1,0 +1,42 @@
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+import os
+
+ROOT_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), '..'))
+PROJECT_DIR = os.path.join(ROOT_DIR, 'dentexchange')
+SETTINGS_DIR = os.path.join(PROJECT_DIR, 'project')
+APPS_DIR = os.path.join(PROJECT_DIR, 'apps')
+TESTS_DIR = os.path.join(ROOT_DIR, 'tests')
+EXCLUDED_APPS = ('autofixtures',)
+
+
+def main(*argv):
+    import sys
+    from nose.core import run_exit
+
+    sys.path.insert(0, SETTINGS_DIR)
+    sys.path.insert(0, APPS_DIR)
+    sys.path.insert(0, TESTS_DIR)
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings')
+    run_exit(argv=list(argv))
+
+
+if __name__ == '__main__':
+    import sys
+
+    base_dir = os.path.dirname(os.path.dirname(__file__))
+    argv = list(sys.argv)
+    argv.extend((
+        '--exe',
+        '--where=%s' % os.path.realpath(
+        os.path.join(base_dir, 'dentexchange', 'apps')),
+        '--with-coverage',
+        '--cover-branches',
+        '--cover-html-dir=%s' % os.path.realpath(
+        os.path.join(base_dir, 'cover')),
+        '--cover-erase',
+        '-s',
+        '--cover-html'))
+    argv.extend(['--cover-package=%s' % path for path in os.listdir(APPS_DIR)
+        if path not in EXCLUDED_APPS])
+    main(*argv)

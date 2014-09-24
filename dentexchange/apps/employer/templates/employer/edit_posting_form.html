@@ -1,0 +1,135 @@
+{% extends 'employer/base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+{% load i18n %}
+{% block profile_scripts %}
+<script type="text/javascript" src="{% static 'employer/js/new_posting.js' %}"></script>
+{% endblock %}
+{% block profile_breadcrumbs %}
+<ol class="breadcrumb">
+    <li><a href="{% url 'employer:praxis_profile' %}">&lt; Back to all practices</a></li>
+</ol>
+{% endblock %}
+{% block profile_content %}
+<div class="row">
+    <div class="col-sm-12">
+        <h1 class="title">{% trans 'Practice Profile / Edit Job Posting' %}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <h4><p>{{ object.praxis.company_name }}<p>
+            <p>{% trans 'Add / Edit Job Posting' %}</p></h4>
+    </div>
+</div>
+<form method="post" action="." role="form">
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="alert alert-error bg-danger">
+                <button type="button" class="btn btn-danger close" data-dismiss="alert" aria-hidden="true">×</button>
+                <ul>
+                    {% for error in form.non_field_errors %} 
+                    <li>{{ error|striptags }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">{% trans 'General Info' %}</div>
+                <div class="panel-body">
+                    {% bootstrap_field form.position_name layout='inline' %}
+                    {% bootstrap_field form.posting_title layout='inline' %}
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">{% trans "Job Position you're looking for" %}</div>
+                <div class="panel-body">
+                    {% bootstrap_field form.job_position layout='inline' %}
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">{% trans 'Type of schedule required' %}</div>
+                <div class="panel-body">
+                    {% bootstrap_field form.schedule_type layout='inline' %}
+                    <div id="id_schedule_days_control_group">
+                    {% bootstrap_field form.monday_daytime layout='inline' %}
+                    {% bootstrap_field form.monday_evening layout='inline' %}
+                    {% bootstrap_field form.tuesday_daytime layout='inline' %}
+                    {% bootstrap_field form.tuesday_evening layout='inline' %}
+                    {% bootstrap_field form.wednesday_daytime layout='inline' %}
+                    {% bootstrap_field form.wednesday_evening layout='inline' %}
+                    {% bootstrap_field form.thursday_daytime layout='inline' %}
+                    {% bootstrap_field form.thursday_evening layout='inline' %}
+                    {% bootstrap_field form.friday_daytime layout='inline' %}
+                    {% bootstrap_field form.friday_evening layout='inline' %}
+                    {% bootstrap_field form.saturday_daytime layout='inline' %}
+                    {% bootstrap_field form.saturday_evening layout='inline' %}
+                    {% bootstrap_field form.sunday_daytime layout='inline' %}
+                    {% bootstrap_field form.sunday_evening layout='inline' %}
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">{% trans 'Compensation' %}</div>
+                <div class="panel-body">
+                    {% bootstrap_field form.compensation_type layout='inline' %}
+                    <div id="id_hourly_wage_control_group">
+                    {% bootstrap_field form.hourly_wage layout='inline' %}
+                    </div>
+                    <div id="id_annualy_wage_control_group">
+                    {% bootstrap_field form.annualy_wage layout='inline' %}
+                    </div>
+                    {% bootstrap_field form.production layout='inline' %}
+                    {% bootstrap_field form.collection layout='inline' %}
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">{% trans 'Experience' %}</div>
+                <div class="panel-body">
+                    {% bootstrap_field form.experience_years layout='inline' %}
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">{% trans 'Benefits being offered' %}</div>
+                <div class="panel-body">
+                    {% bootstrap_field form.benefit_1 layout='inline' %}
+                    {% bootstrap_field form.benefit_2 layout='inline' %}
+                    {% bootstrap_field form.benefit_3 layout='inline' %}
+                    {% bootstrap_field form.benefit_4 layout='inline' %}
+                    {% bootstrap_field form.benefit_5 layout='inline' %}
+                    {% bootstrap_field form.benefit_6 layout='inline' %}
+                    {% bootstrap_field form.benefit_other layout='inline' %}
+                    {% bootstrap_field form.benefit_other_text layout='inline' %}
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">{% trans 'Visa' %}</div>
+                <div class="panel-body">
+                    {% bootstrap_field form.visa layout='inline' %}
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">{% trans 'Additional Comments / Requirements' %}</div>
+                <div class="panel-body">
+                    {% bootstrap_field form.additional_comments layout='inline' %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            {% buttons %}
+            <div class="pull-right">
+                <button type="submit" class="btn btn-primary">{% trans 'Save' %}</button>
+            </div>
+            {% endbuttons %}
+        </div>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'employee/base.html' %}
+{% load static %}
+{% block profile_scripts %}
+<script type="text/javascript" src="{% static 'membership/js/employee_current_plan.js' %}"></script>
+{% endblock %}
+{% block profile_content %}
+{% include 'membership/current_plan.html' %}
+{% endblock %}

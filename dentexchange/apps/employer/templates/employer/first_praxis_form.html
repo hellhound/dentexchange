@@ -1,0 +1,73 @@
+{% extends 'base/base.html' %}
+{% load bootstrap3 %}
+{% load i18n %}
+{% block content %}
+<form method="post" action="{% url 'employer:first_praxis' %}" role="form">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h4><p>{% trans "Please tell us more about your practice." %}</p></h4>
+        </div>
+    </div>
+    {% if form.non_field_errors %}
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="alert alert-error bg-danger">
+                <button type="button" class="btn btn-danger close" data-dismiss="alert" aria-hidden="true">×</button>
+                <ul>
+                    {% for error in form.non_field_errors %} 
+                    <li>{{ error|striptags }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">{% trans 'Personal Info' %}</div>
+                <div class="panel-body">
+                    {% bootstrap_field form.company_name layout='inline' %}
+                    {% bootstrap_field form.contact_first_name layout='inline' %}
+                    {% bootstrap_field form.contact_last_name layout='inline' %}
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">{% trans 'Practice Location' %}</div>
+                <div class="panel-body">
+                    {% bootstrap_field form.address layout='inline' %}
+                    {% bootstrap_field form.zip_code layout='inline' %}
+                    {% bootstrap_field form.city layout='inline' %}
+                    {% bootstrap_field form.state layout='inline' %}
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">{% trans 'Type of Practice' %}</div>
+                <div class="panel-body">
+                    {% bootstrap_field form.solo_practitioner layout='inline' %}
+                    {% bootstrap_field form.multi_practitioner layout='inline' %}
+                    {% bootstrap_field form.corporate layout='inline' %}
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">{% trans "Patients' Method of Payment" %}</div>
+                <div class="panel-body">
+                    {% bootstrap_field form.fee_for_service layout='inline' %}
+                    {% bootstrap_field form.insurance layout='inline' %}
+                    {% bootstrap_field form.capitation_medicaid layout='inline' %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            {% buttons %}
+            <div class="pull-right">
+                <button type="submit" class="btn btn-primary">{% trans 'Continue' %} &gt;</button>
+            </div>
+            {% endbuttons %}
+        </div>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,19 @@
+machine:
+  python:
+    version: 2.7.3
+
+dependencies:
+  override:
+    - bin/install_requirements
+
+test:
+  override:
+    - python bin/runtests
+  post:
+    - cp -R cover/ $CIRCLE_ARTIFACTS/coverage/
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - fab -f bin/fabfile.py deploy:$(git rev-parse --verify HEAD): {timeout: 1000}

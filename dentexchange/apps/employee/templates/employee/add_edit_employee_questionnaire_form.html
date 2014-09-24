@@ -1,0 +1,29 @@
+{% extends 'employee/base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+{% load i18n %}
+{% block profile_scripts %}
+<script type="text/javascript" src="{% static 'employee/js/questionnaire.js' %}"></script>
+<script type="text/javascript" src="{% static 'employee/js/add_edit_questionnaire.js' %}"></script>
+{{ form.resume_form.media }}
+{% endblock %}
+{% block profile_content %}
+<form method="post" action="." role="form">
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-3">
+            <h1 class="title">{% trans 'Profile' %}</h1>
+        </div>
+    </div>
+    {% csrf_token %}
+    {% include 'employee/employee_questionnaire_form.html' %}
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-5">
+            {% buttons %}
+            <div class="pull-right">
+                <button type="submit" class="btn btn-primary">{% trans 'Save' %}</button>
+            </div>
+            {% endbuttons %}
+        </div>
+    </div>
+</form>
+{% endblock %}

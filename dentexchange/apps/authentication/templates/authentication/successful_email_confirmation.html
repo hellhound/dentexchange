@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+{% load bootstrap3 %}
+{% load i18n %}
+{% block login_menu %}
+<li><a href="{% url 'registration:home' %}">{% trans 'Sign up' %}</a></li>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div class="well well-lg text-center">
+                <p>{% trans "We've sent you an email with instructions on how to recover your account." %}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,6 @@
+{% load bootstrap_pagination %}
+{% if object_list and paginator and paginator.num_pages > 1 %}
+<div class="pull-right">
+{% bootstrap_paginate page_obj range=10 %}
+</div>
+{% endif %}

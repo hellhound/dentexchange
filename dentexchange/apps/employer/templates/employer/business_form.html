@@ -1,0 +1,85 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+{% load i18n %}
+{% block scripts %}
+<script type="text/javascript" src="{% static 'employer/js/business.js' %}"></script>
+{% endblock %}
+{% block content %}
+sdfsdfs
+sdfsdfs
+<form method="post" action="{% url 'employer:business' %}" role="form">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h4><p>{% trans 'Welcome to Dentexchange!' %}</p>
+                <p>{% trans "Let's get started." %}</p></h4>
+                <br />
+                <p>{% trans 'First, please tell us more about your business.' %}</p>
+        </div>
+    </div>
+    {% if form.non_field_errors %}
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="alert alert-error bg-danger">
+                <button type="button" class="btn btn-danger close" data-dismiss="alert" aria-hidden="true">×</button>
+                <ul>
+                    {% for error in form.non_field_errors %} 
+                    <li>{{ error|striptags }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <label class="control-label" for="id_number_offices">{% trans 'How many offices do you have?' %}</label>
+                    {% bootstrap_field form.number_offices layout='inline' %}
+                    <div id="id_mso" style="display:none;">
+                        <label class="control-label" for="id_is_mso">{% trans 'Are you an MSO (dental franchise)?' %}</label>
+                        {% bootstrap_field form.is_mso layout='inline' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <label class="control-label" for="id_number_employees">{% trans 'How many employees do you have?' %}</label>
+                    {% bootstrap_field form.number_employees layout='inline' %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">{% trans 'Admin Info' %}</div>
+                <div class="panel-body">
+                    {% csrf_token %}
+                    {% bootstrap_field form.first_name layout='inline' %}
+                    {% bootstrap_field form.last_name layout='inline' %}
+                    {% bootstrap_field form.personal_address layout='inline' %}
+                    {% bootstrap_field form.personal_zip_code layout='inline' %}
+                    {% bootstrap_field form.personal_city layout='inline' %}
+                    {% bootstrap_field form.personal_state layout='inline' %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            {% buttons %}
+            <div class="pull-right">
+            <button type="submit" class="btn btn-primary">Continue &gt;</button>
+            </div>
+            {% endbuttons %}
+        </div>
+    </div>
+</form>
+{% endblock %}

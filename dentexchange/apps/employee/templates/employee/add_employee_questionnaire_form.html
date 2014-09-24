@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+{% load i18n %}
+{% block scripts %}
+<script type="text/javascript" src="{% static 'employee/js/questionnaire.js' %}"></script>
+{{ form.resume_form.media }}
+{% endblock %}
+{% block content %}
+<form method="post" action="{% url 'employee:questionnaire_signup_add' %}" role="form">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h1>{% trans "Welcome to Dentexchange! Let's get started." %}</h1>
+        </div>
+    </div>
+    {% include 'employee/employee_questionnaire_form.html' %}
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            {% buttons %}
+            <div class="pull-right">
+            {% if skippable %}
+            <button type="submit" class="btn btn-primary">{% trans 'Continue editing' %}</button>
+            <button type="submit" class="btn btn-info" name="_skip">{% trans 'Skip step for now' %} &gt;</button>
+            {% else %}
+            <button type="submit" class="btn btn-primary">{% trans 'Continue' %} &gt;</button>
+            {% endif %}
+            </div>
+            {% endbuttons %}
+        </div>
+    </div>
+</form>
+{% endblock %}

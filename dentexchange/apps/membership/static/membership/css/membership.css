@@ -1,0 +1,39 @@
+.price {
+    font-size: 2em;
+}
+
+ul.price-list {
+    list-style-type: none;
+}
+
+.plan-type {
+    padding: 0;
+}
+
+.plan-type-name {
+    background-color: #ecebeb;
+    padding: 0 20px 0 20px; 
+    width: 140px;
+}
+
+.plan-type-description {
+    background-color: #f6f5f5;
+    padding: 0 20px 0 20px; 
+    width: 290px;
+}
+
+table {
+    margin-bottom: 0 !important;
+}
+
+table.order-summary {
+    width: 100%;
+}
+
+table.order-summary hr {
+    margin: 2px 0 2px 0;
+}
+
+table.order-summary .total {
+    width: 15%;
+}

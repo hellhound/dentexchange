@@ -1,0 +1,23 @@
+{% extends 'search/search_view.html' %}
+{% load i18n %}
+{% block search_scripts %}
+<script type="text/javascript">
+    var save_match_url = "{% url 'matches:add_job_posting_match' %}";
+    var view_details_url = "{% url 'employer:view_public_posting_from_list' %}";
+    var delete_url = "{% url 'matches:delete_job_posting_match' %}";
+</script>
+{% endblock %}
+{% block search_template %}
+{% verbatim %}
+<td>
+    <p><strong>{{:posting_title}}</strong></p>
+    <p>{{:schedule_type}}&nbsp;{{:wage}}</p>
+</td>
+<td>
+    <p>{{:address}}, {{:state}}</p>
+    <p>{{:job_position}}</p>
+</td>
+{% endverbatim %}
+{% endblock %}
+{% block search_title %}{% trans 'SEARCH FOR JOB POSTINGS' %}{% endblock %}
+{% block search_form_action %}{% url 'search:employee_results' %}{% endblock %}

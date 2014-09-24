@@ -1,0 +1,12 @@
+{% load i18n %}
+{% trans 'Hi' %}{% if user.userregistration.first_name %} {{ user.userregistration.first_name }}{% else %} {% trans 'User' %}{% endif %},
+
+{% trans 'Welcome to Dentexchange!' %}
+{% trans 'In order to get started, you need to confirm your email address.' %}
+
+{% trans 'Confirm Email Address' %} http://{{ http_host }}
+
+{% trans 'Thank you!' %}
+
+{% trans 'Your Dentexchange Team' %}
+

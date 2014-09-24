@@ -1,0 +1,12 @@
+#id_postings_table {
+    width: 100%;
+}
+
+#id_postings_table td {
+    width: 25%;
+    height: 100px;
+}
+
+.actions a.remove {
+    color: black;
+}

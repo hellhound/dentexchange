@@ -1,0 +1,13 @@
+{% extends 'employer/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block profile_scripts %}
+<script type="text/javascript" src="{% static 'employer/js/dashboard.js' %}"></script>
+{% endblock %}
+{% block profile_content %}
+<div class="row">
+    <div class="col-sm-12">
+        <h1 class="title">{% trans 'Dashboard' %}</h1>
+    </div>
+</div>
+{% endblock %}

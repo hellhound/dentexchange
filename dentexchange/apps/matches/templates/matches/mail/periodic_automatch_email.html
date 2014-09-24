@@ -1,0 +1,20 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dentexchange / {% trans 'You have' %} {{ total_automatches }} {% trans 'automatches.' %}</title>
+</head>
+<body>
+    <h1>Dentexchange</h1>
+    <p>{% trans 'Hi' %} {{ user.userregistration.first_name }} {{ user.userregistration.last_name }},</p>
+    <br />
+    <p>{% trans 'You have' %} {{ total_automatches }} {% trans 'automatches.' %} {% trans 'Take a look at your automatches here:'%}</p>
+    <br />
+    <a href="http://{{ http_host }}{% if user.userregistration.is_employer %}{% url 'matches:questionnaire_automatches' %}{% else %}{% url 'matches:job_posting_automatches' %}{% endif %}">http://{{ http_host }}{% if user.userregistration.is_employer %}{% url 'matches:questionnaire_automatches' %}{% else %}{% url 'matches:job_posting_automatches' %}{% endif %}</a>
+    <br />
+    <p>{% trans 'With kind regards,'%}</p>
+    <br />
+    <p>{% trans 'The Dentexchange team' %}</p>
+</body>
+</html>

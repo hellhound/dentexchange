@@ -1,0 +1,9 @@
+{% load i18n %}
+{% trans 'Hi' %} {{ user.userregistration.first_name }},
+
+{% trans 'You have' %} {{ total_automatches }} {% trans 'automatches.' %} {% trans 'Take a look at your automatches here:'%}
+
+http://{{ http_host }}{% if user.userregistration.is_employer %}{% url 'matches:questionnaire_automatches' %}{% else %}{% url 'matches:job_posting_automatches' %}{% endif %}
+
+{% trans 'With kind regards,'%}
+{% trans 'The Dentexchange team' %}

@@ -1,0 +1,44 @@
+#!/bin/bash
+vercomp () {
+    if [[ $1 == $2 ]]
+    then
+        return 0
+    fi
+    local IFS=.
+    local i ver1=($1) ver2=($2)
+    # fill empty fields in ver1 with zeros
+    for ((i=${#ver1[@]}; i<${#ver2[@]}; i++))
+    do
+        ver1[i]=0
+    done
+    for ((i=0; i<${#ver1[@]}; i++))
+    do
+        if [[ -z ${ver2[i]} ]]
+        then
+            # fill empty fields in ver2 with zeros
+            ver2[i]=0
+        fi
+        if ((10#${ver1[i]} > 10#${ver2[i]}))
+        then
+            return 1
+        fi
+        if ((10#${ver1[i]} < 10#${ver2[i]}))
+        then
+            return 2
+        fi
+    done
+    return 0
+}
+# Make sure nobody is connected
+vercomp $(psql --version | grep -oP "[\d\.]+") 9.1.9999
+case $? in
+    [02])
+        column_name=pg_stat_activity.procpid
+        ;;
+    1)
+        column_name=pg_stat_activity.pid
+        ;;
+esac
+psql -d dentexchange -c "select pg_terminate_backend(${column_name}) from pg_stat_activity where datname like 'dentexchange';"
+/usr/bin/env dropdb dentexchange
+/usr/bin/env createdb dentexchange

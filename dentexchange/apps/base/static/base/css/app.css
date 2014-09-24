@@ -1,0 +1,229 @@
+body {
+    padding-top: 60px;
+}
+
+#logo {
+  color: #0088cc;
+  line-height: 1.2em;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: .5px .5px .5px #2f97c5;
+  margin-bottom: -.5em;
+  margin-top: -.2em;
+}
+
+#logo:hover {
+  color: #436cb2;
+}
+
+.nav>li>a {
+    padding: 0 !important;
+    color: white !important;
+}
+
+ul.nav li {
+  padding: 5px;
+  font-weight: bold;
+}
+
+nav .container-fluid {
+    background-color: #231f20;
+    padding-top: 15px;
+    color: white;
+}
+
+nav .container-fluid li.dropdown ul.dropdown-menu {
+    color: black;
+    width: 250px;
+    padding: 5px;
+}
+
+nav .container-fluid hr {
+    margin-bottom: 0;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -71px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+  height: 71px;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+  footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.valign {
+    vertical-align: top;
+}
+
+.social-icon {
+    font-size: 1.5em;
+}
+
+#footer {
+    background-color: #fafafa;
+    padding-top: 15px;
+}
+
+.empty-results-message {
+    color: gray;
+    font-size: 1.5em;
+}
+
+/* BEGIN: 2014-07-03 Hack */
+
+#logo img {
+    margin-top: -5px;
+    margin-left: 5px;
+}
+
+ul.navbar-right {
+    margin-right: 5px;
+}
+
+.panel-body h2 {
+    font-size: 28px;
+    line-height: 1.2;
+    letter-spacing: 0;
+}
+
+#id_is_employer div.radio {
+    padding-left: 45px;
+    float: left;
+    margin-top: 0 !important;
+}
+
+.form-group {
+    margin-bottom: 7px;
+}
+
+.panel-body form .btn-primary {
+    width: 100%;
+    height: auto;
+    font-size: 17px;
+    background-color: #2cace2;
+    border-color: #2cace2;
+}
+
+.panel-body form .checkbox {
+    margin-top: 0;
+    padding-left: 78px;
+}
+
+#footer h3 {
+    font-weight: normal;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.nav>li>a {
+    font-weight: normal;
+}
+
+h1 {
+    font-weight: normal;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.panel-heading {
+    text-align: center;
+}
+
+.panel-default>.panel-heading {
+    border-color: #f5f5f5;
+}
+
+.btn-primary {
+    background: #2cace2;
+    border-color: #2cace2;
+    color: #FFF;
+}
+
+/* END: 2014-07-03 Hack */
+
+/* BEGIN: 2014-07-07 Hack */
+
+.navbar-nav.navbar-right:last-child {
+    margin-right: 0;
+}
+
+/* END: 2014-07-07 Hack */
+
+/* BEGIN: 2014-07-16 Hack */
+
+.nav>.active>a, .nav>.open>a, .dropdown-menu>.active>a {
+    background: none !important;
+    color: #aaa !important;
+}
+
+.nav>li {
+    margin-left: 10px;
+    padding-top: 8px;
+}
+
+.nav>li>a:hover {
+    color: #CCC !important;
+    background: none !important;
+}
+
+h1.title {
+    color: #2cace2;
+    font-size: 18px;
+}
+
+.dl-horizontal dt {
+    text-align: left;
+}
+
+/*
+#footer {
+    background: #FAFAFA;
+}
+*/
+
+#footer a {
+    color: #888;
+}
+
+#footer a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.table tbody tr.success td,.table tbody tr.success:hover td {
+    background: #c3edff;
+}
+
+.nav>.active>a {
+    background: none;
+    color: #AAA;
+}
+
+/* END: 2014-07-16 Hack */

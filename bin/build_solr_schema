@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+$(dirname $0)/../dentexchange/project/manage.py build_solr_schema > $(dirname $0)/../dentexchange/data/schema.xml.pre
+/usr/bin/env awk '/<\/fields>/{print "    <field name=\"_version_\" type=\"long\" indexed=\"true\" stored=\"true\"/>"}1' $(dirname $0)/../dentexchange/data/schema.xml.pre > $(dirname $0)/../dentexchange/data/schema.xml
+rm $(dirname $0)/../dentexchange/data/schema.xml.pre

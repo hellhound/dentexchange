@@ -1,0 +1,68 @@
+{% extends 'employee/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block profile_extrahead %}
+<link href="{% static 'employee/css/dashboard.css' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block profile_scripts %}
+<script type="text/javascript" src="{% static 'base/js/ajax.js' %}"></script>
+<script type="text/javascript" src="{% static 'employee/js/dashboard.js' %}"></script>
+{% endblock %}
+{% block profile_content %}
+<div class="row">
+    <div class="col-sm-12">
+        <h1 class="title">{% trans 'Dashboard' %}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <h1>{% trans 'Saved Matches' %} (<span id="id_total_saved_matches">{{ matches|length }}</span>)</h1>
+        <table id="id_dashboard_matches_table" class="table table-striped table-hover table-responsive">
+            <tbody>
+                {% for match in matches|slice:':4' %}
+                {% with posting=match.match %}
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col-sm-12"><big>{{ posting.posting_title }}</big></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <br />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <dl class="match-summary dl-horizontal">
+                                    <dt>{% trans 'Profession:' %}</dt>
+                                    <dd>{{ posting.get_job_position_display }}</dd>
+                                    <dt>{% trans 'Experience:' %}</dt>
+                                    <dd>{{ posting.get_experience_years_display }}</dd>
+                                    <dt>{% trans 'Salary:' %}</dt>
+                                    <dd>{% if posting.hourly_wage %}{{ posting.get_hourly_wage_display }}{% else %}{{ posting.get_annualy_wage_display }}{% endif %}</dd>
+                                    <dt>{% trans 'Location:' %}<dt>
+                                    <dd>{{ posting.praxis.address }}, {{ posting.praxis.city }}</dd>
+                                </dl>
+                            </div>
+                            <div class="col-sm-4 text-center">
+                                <p><big class="matchscore">100%</big><br />Matchscore</p>
+                                <p>{% if posting.is_posted and posting.is_active %}<a href="{% url 'employer:view_public_posting_from_list' %}?pk={{ posting.pk }}" class="btn btn-default btn-lg btn-block">View Details</a>{% else %}<span class="label label-danger">Unavailable</span>{% endif %}</p>
+                            </div>
+                            <div class="col-sm-1">
+                                <a class="remove" href="{% url 'matches:delete_job_posting_match' %}?pk={{ posting.pk }}"><span class="glyphicon glyphicon-remove-circle"></span></a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                {% endwith %}
+                {% endfor %}
+                <tr>
+                    <td>
+                        <a href="{% url 'matches:job_posting_saved_matches' %}" class="btn btn-default btn-lg btn-block">{% trans 'See all Saved Matches' %} ></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

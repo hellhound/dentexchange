@@ -1,0 +1,120 @@
+[
+{
+    "pk": 1, 
+    "model": "membership.plan", 
+    "fields": {
+        "content_description": "<ul style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px;\">\r\n<li style=\"box-sizing: border-box;\">Contact employees</li>\r\n<li style=\"box-sizing: border-box;\">View detailed profiles</li>\r\n<li style=\"box-sizing: border-box;\">Post unlimited jobs</li>\r\n<li style=\"box-sizing: border-box;\">Lorem Ipsum</li>\r\n<li style=\"box-sizing: border-box;\">Get a free dinner with Chuanda</li>\r\n</ul>", 
+        "title": "Premium",
+        "for_employer": false
+    }
+},
+{
+    "pk": 2, 
+    "model": "membership.plan", 
+    "fields": {
+        "content_description": "<ul style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px;\">\r\n<li style=\"box-sizing: border-box;\">View partial profiles</li>\r\n<li style=\"box-sizing: border-box;\">Post limited jobs</li>\r\n</ul>", 
+        "title": "Basic",
+        "for_employer": false
+    }
+},
+{
+    "pk": 3, 
+    "model": "membership.plan", 
+    "fields": {
+        "content_description": "<ul style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px;\">\r\n<li style=\"box-sizing: border-box;\">Contact employees</li>\r\n<li style=\"box-sizing: border-box;\">View detailed profiles</li>\r\n<li style=\"box-sizing: border-box;\">Post unlimited jobs</li>\r\n<li style=\"box-sizing: border-box;\">Lorem Ipsum</li>\r\n<li style=\"box-sizing: border-box;\">Get a free dinner with Chuanda</li>\r\n</ul>", 
+        "title": "Employer",
+        "for_employer": true
+    }
+},
+{
+    "pk": 1, 
+    "model": "membership.planprice", 
+    "fields": {
+        "price": "39.99", 
+        "tag": "", 
+        "plan": 1, 
+        "duration_magnitude": 1,
+        "duration_unit": 1,
+        "is_free": false,
+        "total_allowed_job_postings": 0
+    }
+},
+{
+    "pk": 2, 
+    "model": "membership.planprice", 
+    "fields": {
+        "price": "99.99", 
+        "tag": "", 
+        "plan": 1, 
+        "duration_magnitude": 3,
+        "duration_unit": 1,
+        "is_free": false,
+        "total_allowed_job_postings": 0
+    }
+},
+{
+    "pk": 3, 
+    "model": "membership.planprice", 
+    "fields": {
+        "price": "179.99", 
+        "tag": "This is our most popular option", 
+        "plan": 1, 
+        "duration_magnitude": 6,
+        "duration_unit": 1,
+        "is_free": false,
+        "total_allowed_job_postings": 0
+    }
+},
+{
+    "pk": 4, 
+    "model": "membership.planprice", 
+    "fields": {
+        "price": "0", 
+        "tag": "", 
+        "plan": 2, 
+        "duration_magnitude": 0,
+        "duration_unit": 0,
+        "is_free": true,
+        "total_allowed_job_postings": 0
+    }
+},
+{
+    "pk": 5, 
+    "model": "membership.planprice", 
+    "fields": {
+        "price": "39.99", 
+        "tag": "", 
+        "plan": 3, 
+        "duration_magnitude": 1,
+        "duration_unit": 1,
+        "is_free": false,
+        "total_allowed_job_postings": 1
+    }
+},
+{
+    "pk": 6, 
+    "model": "membership.planprice", 
+    "fields": {
+        "price": "109.99", 
+        "tag": "", 
+        "plan": 3, 
+        "duration_magnitude": 3,
+        "duration_unit": 1,
+        "is_free": false,
+        "total_allowed_job_postings": 1
+    }
+},
+{
+    "pk": 7, 
+    "model": "membership.planprice", 
+    "fields": {
+        "price": "209.99", 
+        "tag": "This is our most popular option", 
+        "plan": 3, 
+        "duration_magnitude": 6,
+        "duration_unit": 1,
+        "is_free": false,
+        "total_allowed_job_postings": 1
+    }
+}
+]

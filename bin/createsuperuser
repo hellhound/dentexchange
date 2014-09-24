@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+cat $(dirname $0)/../etc/passwd | {
+    IFS=":" read user email pass
+    echo "from django.contrib.auth.models import User;User.objects.create_superuser('${user}', '${email}', '${pass}')" \
+    | $(dirname $0)/../dentexchange/project/manage.py shell 2>&1>/dev/null;
+}

@@ -1,0 +1,12 @@
+{% load i18n %}
+<div class="row">
+    <div class="col-sm-12">
+        <h1 class="title">{% trans 'Current Membership' %}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <p>{% trans 'You are currently enrolled in the:' %}</p>
+        <p>${{ user.membership.plan_type.price }} / {{ user.membership.plan_type.title }} membership plan</p>
+    </div>
+</div>

@@ -1,0 +1,1202 @@
+[
+{
+    "pk": 1, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Aibonito", 
+        "updated": "2014-08-28T16:59:37.417Z", 
+        "code": "705", 
+        "longitude": "-66.26", 
+        "state": "PR", 
+        "latitude": "18.14"
+    }
+},
+{
+    "pk": 2, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Anasco", 
+        "updated": "2014-08-28T16:59:37.535Z", 
+        "code": "610", 
+        "longitude": "-67.14", 
+        "state": "PR", 
+        "latitude": "18.28"
+    }
+},
+{
+    "pk": 3, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Angeles", 
+        "updated": "2014-08-28T16:59:37.674Z", 
+        "code": "611", 
+        "longitude": "-66.79", 
+        "state": "PR", 
+        "latitude": "18.28"
+    }
+},
+{
+    "pk": 4, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Arecibo", 
+        "updated": "2014-08-28T16:59:37.875Z", 
+        "code": "612", 
+        "longitude": "-66.73", 
+        "state": "PR", 
+        "latitude": "18.45"
+    }
+},
+{
+    "pk": 5, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Adjuntas", 
+        "updated": "2014-08-28T16:59:38.288Z", 
+        "code": "601", 
+        "longitude": "-66.72", 
+        "state": "PR", 
+        "latitude": "18.16"
+    }
+},
+{
+    "pk": 6, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Castaner", 
+        "updated": "2014-08-28T16:59:38.630Z", 
+        "code": "631", 
+        "longitude": "-66.82", 
+        "state": "PR", 
+        "latitude": "18.19"
+    }
+},
+{
+    "pk": 7, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Aguada", 
+        "updated": "2014-08-28T16:59:38.997Z", 
+        "code": "602", 
+        "longitude": "-67.18", 
+        "state": "PR", 
+        "latitude": "18.38"
+    }
+},
+{
+    "pk": 8, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Aguadilla", 
+        "updated": "2014-08-28T16:59:39.352Z", 
+        "code": "603", 
+        "longitude": "-67.15", 
+        "state": "PR", 
+        "latitude": "18.43"
+    }
+},
+{
+    "pk": 9, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Aguadilla", 
+        "updated": "2014-08-28T16:59:39.708Z", 
+        "code": "604", 
+        "longitude": "-67.15", 
+        "state": "PR", 
+        "latitude": "18.43"
+    }
+},
+{
+    "pk": 10, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Aguadilla", 
+        "updated": "2014-08-28T16:59:40.063Z", 
+        "code": "605", 
+        "longitude": "-67.15", 
+        "state": "PR", 
+        "latitude": "18.43"
+    }
+},
+{
+    "pk": 11, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Aguas Buenas", 
+        "updated": "2014-08-28T16:59:40.453Z", 
+        "code": "703", 
+        "longitude": "-66.1", 
+        "state": "PR", 
+        "latitude": "18.25"
+    }
+},
+{
+    "pk": 12, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Aguirre", 
+        "updated": "2014-08-28T16:59:40.842Z", 
+        "code": "704", 
+        "longitude": "-66.22", 
+        "state": "PR", 
+        "latitude": "17.96"
+    }
+},
+{
+    "pk": 13, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Westwood", 
+        "updated": "2014-08-28T16:59:41.164Z", 
+        "code": "7675", 
+        "longitude": "-74.03", 
+        "state": "NJ", 
+        "latitude": "40.98"
+    }
+},
+{
+    "pk": 14, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Woodcliff Lake", 
+        "updated": "2014-08-28T16:59:41.555Z", 
+        "code": "7677", 
+        "longitude": "-74.05", 
+        "state": "NJ", 
+        "latitude": "41.02"
+    }
+},
+{
+    "pk": 15, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Wharton", 
+        "updated": "2014-08-28T16:59:41.956Z", 
+        "code": "7885", 
+        "longitude": "-74.58", 
+        "state": "NJ", 
+        "latitude": "40.89"
+    }
+},
+{
+    "pk": 16, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Whippany", 
+        "updated": "2014-08-28T16:59:42.286Z", 
+        "code": "7981", 
+        "longitude": "-74.41", 
+        "state": "NJ", 
+        "latitude": "40.82"
+    }
+},
+{
+    "pk": 17, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Whippany", 
+        "updated": "2014-08-28T16:59:42.641Z", 
+        "code": "7999", 
+        "longitude": "-74.41", 
+        "state": "NJ", 
+        "latitude": "40.82"
+    }
+},
+{
+    "pk": 18, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Whitehouse", 
+        "updated": "2014-08-28T16:59:43.005Z", 
+        "code": "8888", 
+        "longitude": "-74.76", 
+        "state": "NJ", 
+        "latitude": "40.62"
+    }
+},
+{
+    "pk": 19, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Whitehouse Station", 
+        "updated": "2014-08-28T16:59:43.351Z", 
+        "code": "8889", 
+        "longitude": "-74.76", 
+        "state": "NJ", 
+        "latitude": "40.6"
+    }
+},
+{
+    "pk": 20, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Woodbridge", 
+        "updated": "2014-08-28T16:59:43.620Z", 
+        "code": "7095", 
+        "longitude": "-74.28", 
+        "state": "NJ", 
+        "latitude": "40.55"
+    }
+},
+{
+    "pk": 21, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Wyckoff", 
+        "updated": "2014-08-28T16:59:43.928Z", 
+        "code": "7481", 
+        "longitude": "-74.16", 
+        "state": "NJ", 
+        "latitude": "40.99"
+    }
+},
+{
+    "pk": 22, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:44.510Z", 
+        "code": "10451", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 23, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:44.853Z", 
+        "code": "10452", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 24, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:45.208Z", 
+        "code": "10453", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 25, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:45.603Z", 
+        "code": "10454", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 26, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:45.939Z", 
+        "code": "10455", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 27, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:46.283Z", 
+        "code": "10456", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 28, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:46.694Z", 
+        "code": "10457", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 29, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:47.040Z", 
+        "code": "10458", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 30, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:47.376Z", 
+        "code": "10459", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 31, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:47.755Z", 
+        "code": "10460", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 32, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:48.132Z", 
+        "code": "10461", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 33, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:48.568Z", 
+        "code": "10462", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 34, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:48.854Z", 
+        "code": "10463", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 35, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:49.360Z", 
+        "code": "10464", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 36, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:49.718Z", 
+        "code": "10465", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 37, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:50.072Z", 
+        "code": "10466", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 38, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:50.473Z", 
+        "code": "10467", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 39, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:50.840Z", 
+        "code": "10468", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 40, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:51.253Z", 
+        "code": "10469", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 41, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:51.573Z", 
+        "code": "10470", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 42, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:51.907Z", 
+        "code": "10471", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 43, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:52.269Z", 
+        "code": "10472", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 44, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:52.670Z", 
+        "code": "10473", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 45, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:53.007Z", 
+        "code": "10474", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 46, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:53.361Z", 
+        "code": "10475", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 47, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bronx", 
+        "updated": "2014-08-28T16:59:53.718Z", 
+        "code": "10499", 
+        "longitude": "-73.87", 
+        "state": "NY", 
+        "latitude": "40.84"
+    }
+},
+{
+    "pk": 48, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T16:59:54.064Z", 
+        "code": "10001", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 49, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T16:59:54.476Z", 
+        "code": "10002", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 50, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T16:59:54.784Z", 
+        "code": "10003", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 51, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T16:59:55.077Z", 
+        "code": "10004", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 52, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T16:59:55.367Z", 
+        "code": "10005", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 53, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T16:59:56.005Z", 
+        "code": "10006", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 54, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T16:59:56.351Z", 
+        "code": "10007", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 55, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T16:59:56.706Z", 
+        "code": "10008", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 56, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T16:59:57.097Z", 
+        "code": "10009", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 57, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T16:59:57.429Z", 
+        "code": "10010", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 58, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T16:59:57.619Z", 
+        "code": "10011", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 59, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T16:59:57.978Z", 
+        "code": "10012", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 60, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T16:59:58.178Z", 
+        "code": "10013", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 61, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T16:59:58.488Z", 
+        "code": "10014", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 62, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T16:59:59.004Z", 
+        "code": "10016", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 63, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T16:59:59.383Z", 
+        "code": "10017", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 64, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T16:59:59.763Z", 
+        "code": "10018", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 65, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T17:00:00.106Z", 
+        "code": "10019", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 66, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T17:00:00.452Z", 
+        "code": "10020", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 67, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T17:00:00.795Z", 
+        "code": "10021", 
+        "longitude": "-73.95", 
+        "state": "NY", 
+        "latitude": "40.77"
+    }
+},
+{
+    "pk": 68, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T17:00:01.120Z", 
+        "code": "10022", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 69, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T17:00:02.229Z", 
+        "code": "10023", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 70, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T17:00:02.588Z", 
+        "code": "10024", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 71, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T17:00:02.809Z", 
+        "code": "10025", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 72, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T17:00:03.209Z", 
+        "code": "10026", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 73, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T17:00:03.530Z", 
+        "code": "10027", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 74, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T17:00:03.863Z", 
+        "code": "10028", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 75, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T17:00:04.197Z", 
+        "code": "10029", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 76, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T17:00:04.593Z", 
+        "code": "10030", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 77, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T17:00:04.941Z", 
+        "code": "10031", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 78, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T17:00:05.285Z", 
+        "code": "10032", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 79, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T17:00:05.631Z", 
+        "code": "10033", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 80, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "New York", 
+        "updated": "2014-08-28T17:00:05.985Z", 
+        "code": "10034", 
+        "longitude": "-73.99", 
+        "state": "NY", 
+        "latitude": "40.71"
+    }
+},
+{
+    "pk": 81, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Arecibo", 
+        "updated": "2014-08-28T17:00:06.375Z", 
+        "code": "613", 
+        "longitude": "-66.73", 
+        "state": "PR", 
+        "latitude": "18.45"
+    }
+},
+{
+    "pk": 82, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Arecibo", 
+        "updated": "2014-08-28T17:00:06.782Z", 
+        "code": "614", 
+        "longitude": "-66.73", 
+        "state": "PR", 
+        "latitude": "18.45"
+    }
+},
+{
+    "pk": 83, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Arroyo", 
+        "updated": "2014-08-28T17:00:07.716Z", 
+        "code": "714", 
+        "longitude": "-66.06", 
+        "state": "PR", 
+        "latitude": "17.97"
+    }
+},
+{
+    "pk": 84, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Bajadero", 
+        "updated": "2014-08-28T17:00:07.894Z", 
+        "code": "616", 
+        "longitude": "-66.66", 
+        "state": "PR", 
+        "latitude": "18.4"
+    }
+},
+{
+    "pk": 85, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Barceloneta", 
+        "updated": "2014-08-28T17:00:08.083Z", 
+        "code": "617", 
+        "longitude": "-66.53", 
+        "state": "PR", 
+        "latitude": "18.45"
+    }
+},
+{
+    "pk": 86, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Barranquitas", 
+        "updated": "2014-08-28T17:00:08.497Z", 
+        "code": "794", 
+        "longitude": "-66.3", 
+        "state": "PR", 
+        "latitude": "18.18"
+    }
+},
+{
+    "pk": 87, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Boqueron", 
+        "updated": "2014-08-28T17:00:08.842Z", 
+        "code": "622", 
+        "longitude": "-67.15", 
+        "state": "PR", 
+        "latitude": "17.99"
+    }
+},
+{
+    "pk": 88, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Cabo Rojo", 
+        "updated": "2014-08-28T17:00:09.175Z", 
+        "code": "623", 
+        "longitude": "-67.14", 
+        "state": "PR", 
+        "latitude": "18.08"
+    }
+},
+{
+    "pk": 89, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Camuy", 
+        "updated": "2014-08-28T17:00:09.689Z", 
+        "code": "627", 
+        "longitude": "-66.84", 
+        "state": "PR", 
+        "latitude": "18.48"
+    }
+},
+{
+    "pk": 90, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Canovanas", 
+        "updated": "2014-08-28T17:00:10.225Z", 
+        "code": "729", 
+        "longitude": "-65.9", 
+        "state": "PR", 
+        "latitude": "18.37"
+    }
+},
+{
+    "pk": 91, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Carolina", 
+        "updated": "2014-08-28T17:00:10.575Z", 
+        "code": "979", 
+        "longitude": "-65.98", 
+        "state": "PR", 
+        "latitude": "18.4"
+    }
+},
+{
+    "pk": 92, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Carolina", 
+        "updated": "2014-08-28T17:00:11.217Z", 
+        "code": "981", 
+        "longitude": "-65.98", 
+        "state": "PR", 
+        "latitude": "18.4"
+    }
+},
+{
+    "pk": 93, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Carolina", 
+        "updated": "2014-08-28T17:00:11.564Z", 
+        "code": "982", 
+        "longitude": "-65.98", 
+        "state": "PR", 
+        "latitude": "18.4"
+    }
+},
+{
+    "pk": 94, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Carolina", 
+        "updated": "2014-08-28T17:00:12.209Z", 
+        "code": "983", 
+        "longitude": "-65.98", 
+        "state": "PR", 
+        "latitude": "18.4"
+    }
+},
+{
+    "pk": 95, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Carolina", 
+        "updated": "2014-08-28T17:00:12.631Z", 
+        "code": "984", 
+        "longitude": "-65.98", 
+        "state": "PR", 
+        "latitude": "18.4"
+    }
+},
+{
+    "pk": 96, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Carolina", 
+        "updated": "2014-08-28T17:00:12.975Z", 
+        "code": "985", 
+        "longitude": "-65.98", 
+        "state": "PR", 
+        "latitude": "18.4"
+    }
+},
+{
+    "pk": 97, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Carolina", 
+        "updated": "2014-08-28T17:00:13.645Z", 
+        "code": "986", 
+        "longitude": "-65.98", 
+        "state": "PR", 
+        "latitude": "18.4"
+    }
+},
+{
+    "pk": 98, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Carolina", 
+        "updated": "2014-08-28T17:00:13.973Z", 
+        "code": "987", 
+        "longitude": "-65.98", 
+        "state": "PR", 
+        "latitude": "18.4"
+    }
+},
+{
+    "pk": 99, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Carolina", 
+        "updated": "2014-08-28T17:00:14.342Z", 
+        "code": "988", 
+        "longitude": "-65.98", 
+        "state": "PR", 
+        "latitude": "18.4"
+    }
+},
+{
+    "pk": 100, 
+    "model": "location.zipcode", 
+    "fields": {
+        "city": "Cayey", 
+        "updated": "2014-08-28T17:00:15.014Z", 
+        "code": "736", 
+        "longitude": "-66.16", 
+        "state": "PR", 
+        "latitude": "18.11"
+    }
+}
+]

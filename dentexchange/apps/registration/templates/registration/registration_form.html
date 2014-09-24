@@ -1,0 +1,76 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+{% load i18n %}
+{% block extrahead %}
+<link href="{% static 'registration/css/registration.css' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript" src="{% static 'registration/js/registration_form.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="registration-form row" style="display: none;">
+    <div class="col-sm-4 col-sm-offset-1">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h2>{% trans 'Find your matching Dental Care Employer or Employee in a few steps' %}</h2>
+                <p><small>{% trans 'Sign up for a month of FREE search' %}</small></p>
+                {% if form.non_field_errors %}
+                <div class="alert alert-error bg-danger">
+                    <button type="button" class="btn btn-danger close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <ul>
+                        {% for error in form.non_field_errors %} 
+                        <li>{{ error|striptags }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+                <form method="post" action="{% url 'registration:home' %}" role="form">
+                    {% csrf_token %}
+                    {% bootstrap_field form.is_employer layout='inline' %}
+                    {% bootstrap_field form.email layout='inline' %}
+                    {% bootstrap_field form.password layout='inline' %}
+                    {% bootstrap_field form.confirm_password layout='inline' %}
+                    {% bootstrap_field form.terms_of_use %}
+                    {% buttons %}
+                    <button type="submit" class="btn btn-primary">{% trans 'Join Dentexchange now' %}</button>
+                    {% endbuttons %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="registration-welcome row text-center">
+    <div class="col-sm-10 col-sm-offset-1">
+        <p>{% trans "Wouldn’t you love to find that perfect employee? Wouldn’t you love to find that perfect job? With Dentexchange, it’s easy to find the experienced professional or the professional experience you need." %}</p>
+        <p><a class="sign-up-button"></a></p>
+    </div>
+</div>
+<div class="row registration-footer">
+    <div class="col-sm-6 col-sm-offset-3">
+        <h3 class="text-center"><strong>{% trans "Here’s how it works" %}</strong></h3>
+        <p class="text-center">{% trans 'Are you seeking the best dental practices and most knowledgeable dental employees? With Dentexchange, it’s easy to find the experienced professional you need.' %}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <br />
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4">
+        <p>{% trans 'Employers: Post your Job' %}</p>
+        <p>{% trans 'Tell the Dentexchange community of dental professionals what you need and let the right pro- fessional find you.' %}</p>
+    </div>
+    <div class="col-sm-4">
+        <p>{% trans 'Employees: Apply to Jobs' %}</p>
+        <p>{% trans 'Look through the jobs in your area and apply to those that fit your experience and availability.' %}</p>
+    </div>
+    <div class="col-sm-4">
+        <p>{% trans 'Find the right match' %}</p>
+        <p>{% trans 'Lorem Ipsum perfect match. Lorem Ipsum. Lorem Ipsum. Carpe diem. Carpet cleaning.' %}</p>
+    </div>
+</div>
+{% endblock %}
+{% block footer %}
+{% endblock %}

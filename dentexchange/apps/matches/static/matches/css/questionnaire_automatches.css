@@ -1,0 +1,18 @@
+#id_automatches_table {
+    width: 100%;
+}
+
+#id_automatches_table td {
+    width: 25%;
+    height: 100px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.actions a.btn {
+    width: 100px;
+}
+
+.actions a.remove {
+    color: black;
+}

@@ -1,0 +1,13 @@
+{% load i18n %}
+{% trans 'Hi' %} {{ first_name }} {{ last_name }},
+
+{% trans 'We saw you profile on dentexchange.com:' %}
+http://{{ http_host }}{% url 'employee:view_public_questionnaire_from_list'%}?pk={{ pk }}
+
+{% trans 'and are interested in learning more about your skills.' %}
+
+{% trans 'Please contact us at your earliest convenience.' %}
+
+{% trans 'Thank you.' %}
+
+{% trans 'Best,' %}

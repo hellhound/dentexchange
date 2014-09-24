@@ -1,0 +1,14 @@
+{% load i18n %}
+{% trans 'Hi' %} {{ company_name }},
+
+{% trans 'I saw your job posting on dentexchange.com:' %}
+http://{{ http_host }}{% url 'employer:view_public_posting_from_list' %}?pk={{ pk }}
+
+{% trans 'and I am interested in learning more about your job offer.' %}
+{% trans 'You can see my questionnaire here:' %}
+http://{{ http_host }}{% url 'employee:view_public_questionnaire_from_list' %}?pk={{ user.employeequestionnaire.pk }}
+
+{% trans 'Thank you.' %}
+
+{% trans 'Best,' %}
+{{ user.userregistration.first_name }} {{ user.userregistration.last_name }}

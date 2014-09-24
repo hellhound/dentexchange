@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#$(dirname $0)/../dentexchange/project/manage.py loaddata $(dirname $0)/../etc/testing_fixture.json
+/usr/bin/env tar xf $(dirname $0)/../etc/testing_fixture.json.tar.bz2 -C/tmp
+$(dirname $0)/../dentexchange/project/manage.py loaddata /tmp/testing_fixture.json
+rm /tmp/testing_fixture.json

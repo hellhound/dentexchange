@@ -1,0 +1,93 @@
+{% extends 'employer/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block profile_extrahead %}
+<link href="{% static 'matches/css/questionnaire_automatches.css' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block profile_scripts %}
+<script type="text/javascript">
+    var praxes = {{ praxes|safe }};
+    var all_praxes_caption = "{% trans 'All Practices' %}";
+    var all_job_postings_caption = "{% trans 'All Job Postings' %}";
+    var refresh_automatches_beacon_url = "{% url 'matches:refresh_automatches_beacon' %}";
+</script>
+<script type="text/javascript" src="{% static 'base/js/querystring.jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'base/js/ajax.js' %}"></script>
+<script type="text/javascript" src="{% static 'matches/js/questionnaire_automatches.js' %}"></script>
+<script type="text/javascript" src="{% static 'matches/js/refresh_automatches.js' %}"></script>
+{% endblock %}
+{% block profile_content %}
+<div class="row">
+    <div class="col-sm-6">
+        <h1 class="title">{% trans 'Automatches' %}</h1>
+    </div>
+    <div class="col-sm-offset-6">
+        <div class="pull-right">
+            <form action="{% url 'matches:refresh_automatches' %}" role="form">
+                <button type="button" id="id_refresh_automatch" class="btn btn-primary">{% trans 'Look for Automatches' %}</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <form id="id_filter" class="form-inline pull-right" action="{% url 'matches:questionnaire_automatches' %}" method="get" role="form">
+            <div class="form-group">
+                <select id="id_praxes" name="praxis_pk" class="chosen-select" data-placeholder="{% trans 'All Practices' %}">
+                </select>
+            </div>
+            <div class="form-group">
+                <select id="id_job_postings" name="job_posting_pk" class="chosen-select" data-placeholder="{% trans 'All Job Postings' %}">
+                </select>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <br />
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <table id="id_automatches_table" class="table table-striped table-hover table-responsive">
+            <tbody>
+            {% for match in object_list %}
+            {% with questionnaire=match.match posting=match.source %}
+                <tr class="vcenter{% if match.is_saved %} success{% endif %}">
+                    <td>
+                        <p>{{ questionnaire.get_schedule_type_display }}</p>
+                        <p>{% if questionnaire.compensation_type %}{{ questionnaire.get_annualy_wage_display }}{% else %}{{ questionnaire.get_hourly_wage_display }}{% endif %}</p>
+                    </td>
+                    <td>
+                        <p>{{ questionnaire.city }}, {{ questionnaire.get_state_display }} ({{ questionnaire.get_distance_display }})</p>
+                        <p>{{ questionnaire.get_job_position_display }}</p>
+                    </td>
+                    <td><a href="{% url 'employer:view_posting' posting.pk %}">{{ posting.position_name }}</a></td>
+                    <td>
+                        <div class="actions" style="display: none;">
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <a class="btn btn-default" href="{% url 'employee:view_public_questionnaire_from_list' %}?pk={{ questionnaire.pk }}">{% trans 'View Details' %}</a>
+                                    <a href="{% url 'matches:add_match_from_automatch' %}?pk={{ match.pk }}"{% if match.is_saved %} style="display: none"{% endif %} class="actions-save btn btn-default">{% trans 'Save' %}</a>
+                                </div>
+                                <div class="col-sm-1">
+                                    <div class="remove"{% if not match.is_saved %} style="display: none;"{% endif %}>
+                                        <a class="remove pull-right" href="{% url 'matches:delete_match_from_automatch' %}?pk={{ match.pk }}"><span class="glyphicon glyphicon-remove-circle"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            {% endwith %}
+            {% empty %}
+                <tr>
+                    <td class="text-center empty-results-message">{% trans 'No automatches.' %}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

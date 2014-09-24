@@ -1,0 +1,5 @@
+{{ object.code }}
+{{ object.city }}
+{{ object.state }}
+{{ object.latitude }}
+{{ object.longitude }}

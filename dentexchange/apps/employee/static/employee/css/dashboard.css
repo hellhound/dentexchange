@@ -1,0 +1,27 @@
+#id_dashboard_matches_table,#id_dashboard_messages_table {
+    width: 100%;
+}
+
+#id_dashboard_messages_table td:nth-child(2) {
+    width: 20%;
+}
+
+#id_dashboard_matches_table td,#id_dashboard_messages_table td {
+    padding: 5px;
+}
+
+#id_dashboard_matches_table .remove {
+    color: black;
+}
+
+.matchscore {
+    font-size: 2.5em;
+}
+
+dl.match-summary dt {
+    width: 90px;
+}
+
+dl.match-summary dd {
+    margin-left: 110px;
+}

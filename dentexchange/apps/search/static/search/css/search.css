@@ -1,0 +1,26 @@
+#id_sort_by_form {
+    display: inline;
+}
+
+#id_results_table {
+    width: 100%;
+}
+
+#id_results_table td {
+    padding-top: 20px;
+    padding-left: 20px;
+    width: 33%;
+    height: 100px;
+}
+
+.actions a.btn {
+    width: 96px;
+}
+
+.actions a.remove {
+    color: black;
+}
+
+#id_show_filters {
+    cursor: pointer;
+}
